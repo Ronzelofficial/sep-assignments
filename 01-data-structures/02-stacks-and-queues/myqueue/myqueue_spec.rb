@@ -27,13 +27,19 @@ RSpec.describe MyQueue, type: Class do
     it "updates the head and tail accessors properly" do
       q.enqueue("Rob")
       expect(q.head).to eq "Rob"
+        puts "Rob #{q.head}"
       expect(q.tail).to eq "Rob"
+        puts "Rob #{q.tail}"
       q.enqueue("Ben")
       expect(q.head).to eq "Rob"
+        puts "Rob #{q.head}"
       expect(q.tail).to eq "Ben"
+        puts "Ben #{q.tail}"
       q.dequeue
       expect(q.head).to eq "Ben"
+        puts "Ben #{q.head}"
       expect(q.tail).to eq "Ben"
+        puts "Ben #{q.tail}"
       q.dequeue
       expect(q.head).to eq nil
       expect(q.tail).to eq nil

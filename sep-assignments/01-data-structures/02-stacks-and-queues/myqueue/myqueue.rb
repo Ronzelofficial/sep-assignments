@@ -9,16 +9,16 @@ class MyQueue
 
   def enqueue(element)
     @queue << element
-    @head = @queue.first
-    @tail = @queue.last
+    @head = @queue[0]
+    @tail = @queue[-1]
   end
 
   def dequeue
     if !empty?
-      @queue.delete_at(0)
+      @queue.delete_at(@queue.length-1)
     end
-    @head = @queue.first
     @tail = @queue.last
+    @head = @queue.first
   end
 
   def empty?
