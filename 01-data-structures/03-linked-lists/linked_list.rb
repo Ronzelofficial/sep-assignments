@@ -16,6 +16,9 @@ class LinkedList
 
   # This method removes the last node in the lists and must keep the rest of the list intact.
   #question about this right here.
+
+  # if head is equal to tail, if so, set tail and head to nil. otherwize, start at while loop.  
+
   def remove_tail
     if self.head != nil && self.head.next != nil
       x = self.head
@@ -27,6 +30,7 @@ class LinkedList
       self.tail = y
     else
       self.tail = nil
+
     end
   end
 

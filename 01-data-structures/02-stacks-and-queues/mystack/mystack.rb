@@ -1,3 +1,6 @@
+# try redo with nodes instead of arrays
+
+
 class MyStack
   attr_accessor :top
 

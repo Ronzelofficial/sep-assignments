@@ -18,6 +18,7 @@ class HashClass
   end
 
 
+
   def [](key)
     item = @items[index(key, @size)]
     item.nil? ? nil : item.value
