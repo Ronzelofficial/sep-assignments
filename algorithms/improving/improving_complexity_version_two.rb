@@ -1,4 +1,5 @@
 # Improving time and space
+#done
 
 def betteralgo(array)
   heapify(array.flatten!)

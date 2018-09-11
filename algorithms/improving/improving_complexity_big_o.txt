@@ -1,3 +1,5 @@
+#done
+
 The one given in the assignment is O(n^2)
 After getting rid of the double loop we can increase it a little but the
 improvements arent really that much. its still O(n^2)

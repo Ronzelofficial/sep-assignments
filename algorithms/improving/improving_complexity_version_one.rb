@@ -1,3 +1,5 @@
+#done
+
 def poorly_written_ruby(*arrays)
   combined_array = []
     arrays.flatten!.each do |value|
