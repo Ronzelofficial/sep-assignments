@@ -1,3 +1,5 @@
+#done
+
 def bucket_sort(arr, bucket_size = 1)
   if arr.empty? || arr.length == 1
     return arr
@@ -38,6 +40,7 @@ def bucket_sort(arr, bucket_size = 1)
 
   arr
 end
+
 
 
 
