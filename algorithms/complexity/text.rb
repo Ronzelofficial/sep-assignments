@@ -1,3 +1,6 @@
+#done
+
+
 1. 5g highspeed internet vs first generation
 2. first index
 3. half each time, log n
@@ -9,4 +12,4 @@
 9. just a line
 10. log
 11. 1
-12. log 
+12. log
