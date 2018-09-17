@@ -1,7 +1,9 @@
-#done
+#donehope
 
 The one given in the assignment is O(n^2)
 After getting rid of the double loop we can increase it a little but the
 improvements arent really that much. its still O(n^2)
 
 The heap version that I wrote earlier and then applied to this has O(nlogn)!
+
+The quick sort alog is O(nlogn) at best but still n^2 at worst.

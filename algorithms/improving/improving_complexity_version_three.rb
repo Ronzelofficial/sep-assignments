@@ -1,35 +1,20 @@
 # Improving time and space
-#done
-
-def betteralgo(array)
-  heapify(array.flatten!)
-  array
-end
-
-def heapify(array)
-  starter = array.length-1
-  p array.length-1
-  while starter >= 0
-    shift(array, starter, array.length-1 )
-    starter -= 1
-  end
-  return array
-end
-
-def shift(array, starter, ender)
-  root = starter
-  loop do
-    child = root + 1
-    break if child > ender
-    if array[root] < array[child]
-      array[root], array[child] = array[child], array[root]
-      root = child
-      else
-      break
-      return
+#donehope
+def quick_sort(array)
+  array.flatten!
+  if array.length <= 1
+    return array
+  else
+    pivot = array[0]
+    left = []
+    right =[]
+    array.delete_at(0)
+    array.each do |n|
+      n <= pivot ? left.push(n) : right.push(n)
     end
+     quick_sort(right) + [pivot] + quick_sort(left)
   end
 end
 
-arr = [[1,4,3],[2,5,6],[-1,44,5,32,44]]
-p sorted_array = betteralgo(arr)
+array = [[1,3],[2,5,6],[-1,32,44]]
+p sorted_array = quick_sort(array)
