@@ -21,7 +21,7 @@ def shift(array, starter, ender)
   loop do
     child = root + 1
     break if child > ender
-    if array[root] < array[child]
+    if array[root] > array[child]
       array[root], array[child] = array[child], array[root]
       root = child
       else
