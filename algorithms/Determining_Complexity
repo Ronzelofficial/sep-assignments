@@ -1,6 +1,6 @@
-1. O(1)
-2. O(n)
-3. O(n^2)
-4. O(2^n)
-5. O(n)
-6. O(nlog(n))
+1. O(1) its constant
+2. O(n) linear because it has to go through the whole data set,
+3. O(n^2) quadratic because it loops through the data set twice while still only passing in one thing (array)
+4. O(2^n) as n increases this will get exponentially slow
+5. O(n)   linear, just iterating through a data set
+6. O(nlog(n)) exponentially gets faster i think because of all the recursive calls, but im actually not sure. 
