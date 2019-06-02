@@ -20,6 +20,7 @@ class Graph
             actors.each do |actor|
                 if actor.name == "Kevin Bacon"
                     @films.push(movie)
+                    return @films
                 else
                     find_kevin_bacon(actor)
                 end
