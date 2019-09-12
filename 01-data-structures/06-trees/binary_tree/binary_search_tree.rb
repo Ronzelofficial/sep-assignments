@@ -1,58 +1,58 @@
 require_relative 'node'
 
 class BinarySearchTree
-  attr_accessor :root
 
   def initialize(root)
     @root = root
   end
 
   def insert(root, node)
-    if node.rating <= root.rating
-      !root.left ? root.left = node : insert(root.left, node)
+    current_node = root
+    if node.rating < current_node.rating
+      if !current_node.left
+        current_node.left = node
+      else
+        current_node = current_node.left
+        insert(current_node, node)
+      end
     else
-      !root.right ? root.right = node : insert(root.right, node)
+      if !current_node.right
+        current_node.right = node
+      else
+        current_node = current_node.right
+        insert(current_node, node)
+      end
     end
   end
 
   # Recursive Depth First Search
   def find(root, data)
-    if root.nil? || data.nil?
-      return nil
-    else
-      if root.title == data
-        return root
-      elsif root.left != nil
-        find(root.left, data)
-      elsif root.right != nil
-        find(root.right, data)
-      end
+    return nil if data === nil
+    result = nil
+    return root if root.title === data
+    if root.left
+      result = find(root.left, data)
     end
+    if root.right && !result
+      result = find(root.right, data)
+    end
+    return result
   end
 
   def delete(root, data)
-    if root.nil? || data.nil?
-      return nil
-    else
-      target_node = find(root, data)
-      target_node.nil? ? nil : (target_node.title = nil && target_node.rating = nil)
-    end
+    target_node = find(root, data)
+    target_node.title = nil if target_node
+    target_node.rating = nil if target_node
   end
 
   # Recursive Breadth First Search
-  def printf(children=nil)
+  def printf
     queue = [@root]
-    result = []
-    while queue.length > 0
-      new_root = queue.shift
-      if new_root.left != nil
-        queue.push(new_root.left)
-      end
-      if new_root.right != nil
-        queue.push(new_root.right)
-      end
-      result.push("#{new_root.title}: #{new_root.rating}")
+    while !queue.empty?
+      temp = queue.shift
+      print "#{temp.title}: #{temp.rating}\n"
+      queue.push(temp.left)if temp.left
+      queue.push(temp.right)if temp.right
     end
-    result.each {|x| puts x}
   end
 end
